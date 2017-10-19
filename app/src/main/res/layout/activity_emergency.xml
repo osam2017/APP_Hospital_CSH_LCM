@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
     android:orientation="vertical"
-    tools:context="com.example.administrator.H">
+    tools:context="com.example.administrator.hospitalproject.EmergencyActivity">
 
     <ImageButton
         android:id="@+id/imageButton10"
@@ -15,7 +15,7 @@
         android:layout_weight="8"
         android:layout_gravity="center_horizontal"
         android:background="@android:color/background_light"
-        app:srcCompat="@image/cpr"
+        app:srcCompat="@drawable/cpr"
         android:adjustViewBounds="true"
         android:scaleType="fitStart"/>
 

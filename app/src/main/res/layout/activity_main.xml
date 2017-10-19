@@ -4,25 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.example.administrator.HospitalProject.MainActivity">
+    tools:context="com.example.administrator.hospitalproject.MainActivity">
 
-    <ImageButton
-        android:id="@+id/main_imgbtn"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:adjustViewBounds="true"
+        android:layout_weight="1"
         android:background="@android:color/holo_blue_light"
-        android:scaleType="fitStart"
-        app:srcCompat="@drawable/nobg" />
+        >
+
+        <ImageButton
+            android:id="@+id/main_imgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:background="@android:color/holo_blue_light"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/nobg" />
+
+        <Button
+            android:id="@+id/btnMaster"
+            android:layout_width="140dp"
+            android:layout_height="36dp"
+            android:background="#ffffffff"
+            android:text="Master" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:background="@android:color/background_light"
         android:orientation="vertical">
 

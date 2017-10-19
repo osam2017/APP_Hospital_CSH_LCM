@@ -16,9 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserActivity" />
-        <activity android:name=".questionnaire" />
-        <activity android:name=".Emergency"></activity>
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".EmergencyActivity" />
+        <activity android:name=".Doctor_Choose_hospitalActivity" />
+        <activity android:name=".Admin_loginActivity" />
+        <activity android:name=".AdminActivity"></activity>
     </application>
 
 </manifest>

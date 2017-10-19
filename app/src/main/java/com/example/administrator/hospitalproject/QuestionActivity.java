@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 import java.util.LinkedList;
 
 
-public class Question extends AppCompatActivity implements OnClickListener {
+public class QuestionActivity extends AppCompatActivity implements OnClickListener {
 
     private ToggleButton deptBtn1;
     private ToggleButton deptBtn2;
@@ -150,100 +150,100 @@ public class Question extends AppCompatActivity implements OnClickListener {
             case R.id.deptBtn6:
                 if (deptBtn6.isChecked()) {
                     deptBtn6.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn6);
+                    deptStateArray.add(R.id.deptBtn6);
 
                 } else {
-                    NodeRemove(deptBtn6,R.id.deptBtn6);
+                    NodeRemove(deptStateArray, deptBtn6,R.id.deptBtn6);
                     deptBtn5.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn7:
                 if (deptBtn7.isChecked()) {
                     deptBtn7.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn7);
+                    deptStateArray.add(R.id.deptBtn7);
 
                 } else {
-                    NodeRemove(deptBtn7,R.id.deptBtn7);
+                    NodeRemove(deptStateArray, deptBtn7,R.id.deptBtn7);
                     deptBtn7.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn8:
                 if (deptBtn8.isChecked()) {
                     deptBtn8.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn8);
+                    deptStateArray.add(R.id.deptBtn8);
 
                 } else {
-                    NodeRemove(deptBtn8,R.id.deptBtn8);
+                    NodeRemove(deptStateArray, deptBtn8,R.id.deptBtn8);
                     deptBtn8.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn9:
                 if (deptBtn9.isChecked()) {
                     deptBtn9.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn9);
+                    deptStateArray.add(R.id.deptBtn9);
 
                 } else {
-                    NodeRemove(deptBtn9,R.id.deptBtn9);
+                    NodeRemove(deptStateArray, deptBtn9,R.id.deptBtn9);
                     deptBtn9.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn10:
                 if (deptBtn10.isChecked()) {
                     deptBtn10.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn10);
+                    deptStateArray.add(R.id.deptBtn10);
 
                 } else {
-                    NodeRemove(deptBtn10,R.id.deptBtn10);
+                    NodeRemove(deptStateArray, deptBtn10,R.id.deptBtn10);
                     deptBtn10.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn11:
                 if (deptBtn11.isChecked()) {
                     deptBtn11.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn11);
+                    deptStateArray.add(R.id.deptBtn11);
 
                 } else {
-                    NodeRemove(deptBtn11,R.id.deptBtn11);
+                    NodeRemove(deptStateArray, deptBtn11,R.id.deptBtn11);
                     deptBtn11.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn12:
                 if (deptBtn12.isChecked()) {
                     deptBtn12.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn12);
+                    deptStateArray.add(R.id.deptBtn12);
 
                 } else {
-                    NodeRemove(deptBtn12,R.id.deptBtn12);
+                    NodeRemove(deptStateArray, deptBtn12,R.id.deptBtn12);
                     deptBtn12.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn13:
                 if (deptBtn13.isChecked()) {
                     deptBtn13.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn13);
+                    deptStateArray.add(R.id.deptBtn13);
 
                 } else {
-                    NodeRemove(deptBtn13,R.id.deptBtn13);
+                    NodeRemove(deptStateArray, deptBtn13,R.id.deptBtn13);
                     deptBtn13.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn14:
                 if (deptBtn14.isChecked()) {
                     deptBtn14.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn14);
+                    deptStateArray.add(R.id.deptBtn14);
 
                 } else {
-                    NodeRemove(deptBtn14,R.id.deptBtn14);
+                    NodeRemove(deptStateArray, deptBtn14,R.id.deptBtn14);
                     deptBtn14.setTextColor(Color.RED);
                 }
                 break;
             case R.id.deptBtn15:
                 if (deptBtn15.isChecked()) {
                     deptBtn15.setTextColor(Color.BLACK);
-                    BtnStateArray.add(R.id.deptBtn15);
+                    deptStateArray.add(R.id.deptBtn15);
 
                 } else {
-                    NodeRemove(deptBtn15,R.id.deptBtn15);
+                    NodeRemove(deptStateArray, deptBtn15,R.id.deptBtn15);
                     deptBtn15.setTextColor(Color.RED);
                 }
                 break;

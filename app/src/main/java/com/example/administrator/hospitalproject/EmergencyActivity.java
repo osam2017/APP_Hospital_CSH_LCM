@@ -3,7 +3,7 @@ package com.example.administrator.hospitalproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Emergency extends AppCompatActivity {
+public class EmergencyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
