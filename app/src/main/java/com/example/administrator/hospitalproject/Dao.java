@@ -4,12 +4,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.EditText;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import static com.loopj.android.http.AsyncHttpClient.log;
 
 public class Dao {
     private Context context;
@@ -21,64 +24,49 @@ public class Dao {
         database = context.openOrCreateDatabase("LocalDATA.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
         try{
             String sql = "CREATE TABLE IF NOT EXISTS Articles  (ID integer primary key autoincrement,"
-                    + "                                         ArticleNumber integer UNIQUE not null,"
-                    + "                                         Title text not null,"
-                    + "                                         WriterName text not null,"
-                    + "                                         WriterID text not null,"
-                    + "                                         Content text not null,"
-                    + "                                         WriteDate text not null,"
-                    + "                                         ImgName text not null);";
+                    + "                                         userName text ,"
+                    + "                                         userNum text ,"
+                    + "                                         deptId text ,"
+                    + "                                         SxId text ,"
+                    + "                                         pastContent text ,"
+                    + "                                         dtContent text );";
             database.execSQL(sql);
+
         } catch (Exception e){
             Log.e("test", "CREATE TABLE FAILED! -" + e );
             e.printStackTrace();
         }
     }
 
-    public void insertJsonData(String jsonData){
 
-        // JSON으로 데이터를 파싱할 때 사용할 임시 변수
-        int articleNumber;
-        String title;
-        String writer;
-        String id;
-        String content;
-        String writeDate;
-        String imgName;
+    public void makeJsonData(){
 
-        FileDownloader fileDownloader = new FileDownloader(context);
+    }
+    public void insertData(String userName, String userNum, String deptId, String SxId , String pastContent, String dtContent){
 
-        try{
-            JSONArray jArr = new JSONArray(jsonData);
 
-            for (int i = 0; i < jArr.length(); ++i){
-                JSONObject jObj = jArr.getJSONObject(i);
+        //FileDownloader fileDownloader = new FileDownloader(context);
 
-                articleNumber = jObj.getInt("ArticleNumber");
-                title = jObj.getString("Title");
-                writer = jObj.getString("Writer");
-                id = jObj.getString("Id");
-                content = jObj.getString("Content");
-                writeDate = jObj.getString("WriteDate");
-                imgName = jObj.getString("ImgName");
 
-                Log.i ("test", "ArticleNumber: " + articleNumber + " Title:" + title );
+        try {
 
-                String sql = "INSERT INTO Articles(ArticleNumber, Title, WriterName, WriterID, Content, WriteDate, ImgName)"
-                        + " VALUES(" + articleNumber + ",'" + title + "','" + writer + "','" + id + "', '" + content + "', '"
-                        + writeDate +  "', '" + imgName + "');";
+            String sql = "INSERT INTO Articles(userName, userNum, deptId, SxId, pastContent, dtContent)"
+                    + " VALUES(" +"'" + userName + "','" + userNum + "','" + deptId + "', '" + SxId + "', '"
+                    + pastContent + "', '" + dtContent + "');";
+            Log.i("Dao_insertData","userName: " + userName);
+            Log.i("Dao_insertData","deptId: " + deptId);
+            Log.i("Dao_insertData","SxId: " + SxId);
+            try {
+                database.execSQL(sql);
 
-                try{
-                    database.execSQL(sql);
-                } catch (Exception e) {
-                    Log.e("test", "DB ERROR " + e);
-                    e.printStackTrace();
-                }
-                fileDownloader.downFile("http://10.53.128.137:5009/image/" + imgName, imgName);
-                Log.i("test",   "http://10.53.128.137:5009/image/" + imgName);
+            } catch (Exception e) {
+                Log.e("test", "DB ERROR " + e);
+                e.printStackTrace();
             }
-        } catch (JSONException e){
-            Log.e("test", "JSON ERROR! -" + e);
+            // fileDownloader.downFile("http://127.0.0.1:5009/image/" + imgName, imgName);
+            //Log.i("test",   "http://10.53.128.137:5009/image/" + imgName);
+        }catch (Exception e){
+            Log.e("test", "insert ERROR! -" + e);
             e.printStackTrace();
         }
     }
@@ -88,27 +76,31 @@ public class Dao {
         ArrayList<Article> articleList = new ArrayList<Article>();
 
         int articleNumber;
-        String title;
-        String writer;
-        String id;
-        String content;
-        String writeDate;
-        String imgName;
+        String userName;
+        String userNum;
+        String deptId;
+        String SxId;
+        String pastContent;
+        String dtContent;
 
         String sql = "SELECT * FROM Articles;";
+
         Cursor cursor = database.rawQuery(sql, null);
 
         while (cursor.moveToNext()){
-            articleNumber = cursor.getInt(1);
-            title = cursor.getString(2);
-            writer = cursor.getString(3);
-            id = cursor.getString(4);
-            content = cursor.getString(5);
-            writeDate = cursor.getString(6);
-            imgName = cursor.getString(7);
-            articleList.add(new Article(articleNumber, title, writer, id, content, writeDate, imgName));
+            userName = cursor.getString(1);
+            Log.e("cursor", "getString" + userName);
+
+            userNum = cursor.getString(2);
+            deptId = cursor.getString(3);
+            SxId = cursor.getString(4);
+            pastContent = cursor.getString(5);
+            dtContent = cursor.getString(6);
+            articleList.add(new Article(userName, userNum, deptId, SxId, pastContent, dtContent));
         }
+        log.i("ArrayList", cursor.getString(1));
         cursor.close();
+
         return articleList;
     }
 
@@ -117,12 +109,12 @@ public class Dao {
         Article article = null;
 
 //        int articleNumber;
-        String title;
-        String writer;
-        String id;
-        String content;
-        String writeDate;
-        String imgName;
+        String userName;
+        String userNum;
+        String deptId;
+        String SxId;
+        String pastContent;
+        String dtContent;
 
         String sql = "SELECT * FROM Articles WHERE ArticleNumber = " + articleNumber + ";";
         Cursor cursor = database.rawQuery(sql, null);
@@ -130,13 +122,13 @@ public class Dao {
         cursor.moveToNext();
 
         articleNumber = cursor.getInt(1);
-        title = cursor.getString(2);
-        writer = cursor.getString(3);
-        id = cursor.getString(4);
-        content = cursor.getString(5);
-        writeDate = cursor.getString(6);
-        imgName = cursor.getString(7);
-        article = new Article(articleNumber, title, writer, id, content, writeDate, imgName);
+        userName = cursor.getString(2);
+        userNum = cursor.getString(3);
+        deptId = cursor.getString(4);
+        SxId = cursor.getString(5);
+        pastContent = cursor.getString(6);
+        dtContent = cursor.getString(7);
+        //article = new Article(articleNumber, userName, userNum, deptId, SxId, pastContent, dtContent);
 
         cursor.close();
         return article;
@@ -162,13 +154,12 @@ public class Dao {
         sb.append("[");
 
         sb.append("      {");
-        sb.append("         'ArticleNumber':'1',");
-        sb.append("         'Title':'오늘도 좋은 하루',");
-        sb.append("         'Writer':'학생1',");
-        sb.append("         'Id':'6613d02f3e2153283f23bf621145f877',");
-        sb.append("         'Content':'하지만 곧 기말고사지...',");
-        sb.append("         'WriteDate':'2013-09-23-10-10',");
-        sb.append("         'ImgName':'photo1.jpg'");
+        sb.append("         'userName':'최슿오',");
+        sb.append("         'userNum':'16-76022415',");
+        sb.append("         'deptId':'6613d02f3e2153283f23bf621145f877',");
+        sb.append("         'SxId':'하지만 곧 기말고사지...',");
+        sb.append("         'pastContent':'2013-09-23-10-10',");
+        sb.append("         'dtContent':'photo1.jpg'");
         sb.append("      },");
         sb.append("      {");
         sb.append("         'ArticleNumber':'2',");

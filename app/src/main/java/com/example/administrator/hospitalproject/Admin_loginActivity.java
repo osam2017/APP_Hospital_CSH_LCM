@@ -11,8 +11,8 @@ import android.widget.Toast;
 public class Admin_loginActivity extends AppCompatActivity implements View.OnClickListener{
     String id;
     String password;
-    String correctid = "afmc";
-    String correctpassword = "admin";
+    String correctid = "root";
+    String correctpassword = "root";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class Admin_loginActivity extends AppCompatActivity implements View.OnCli
 
         Button loginbtn = (Button) findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(this);
+
     }
 
     @Override
@@ -29,7 +30,7 @@ public class Admin_loginActivity extends AppCompatActivity implements View.OnCli
         id = idedittext.getText().toString();
         password = passwordedittext.getText().toString();
         if(id.equals(correctid) && password.equals(correctpassword)){
-            Intent intentadmin = new Intent(this, AdminActivity.class);
+            Intent intentadmin = new Intent(this, Admin_list.class);
             startActivity(intentadmin);
         }else{
             Toast.makeText(getApplicationContext(), "ID 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();

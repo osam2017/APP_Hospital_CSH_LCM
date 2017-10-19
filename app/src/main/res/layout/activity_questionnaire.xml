@@ -34,6 +34,13 @@
                 android:gravity="center"
                 android:text="병원명"
                 android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/postBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="제출" />
         </FrameLayout>
 
     </LinearLayout>
@@ -67,16 +74,16 @@
                     android:layout_weight="0.01">
 
                     <EditText
-                        android:id="@+id/editText6"
+                        android:id="@+id/pastContent"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
                         android:layout_gravity="center"
                         android:layout_weight="0.01"
                         android:ems="10"
                         android:hint="본인 과거/가족 병력"
-                        android:inputType="textMultiLine"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true" />
+                        android:inputType="textMultiLine" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -87,7 +94,7 @@
                     android:weightSum="1">
 
                     <EditText
-                        android:id="@+id/editText3"
+                        android:id="@+id/userName"
                         android:layout_width="112dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -95,7 +102,7 @@
                         android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/editText4"
+                        android:id="@+id/userNum"
                         android:layout_width="189dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -107,7 +114,7 @@
                         android:layout_width="52dp"
                         android:layout_height="48dp"
                         android:layout_weight="0.36"
-                        android:text="Button" />
+                        android:text="조회" />
                 </LinearLayout>
 
                 <TextView
@@ -395,7 +402,7 @@
                 </GridLayout>
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/dtContent"
                     android:layout_width="355dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"

@@ -2,50 +2,47 @@ package com.example.administrator.hospitalproject;
 
 public class Article {
 
-    private int articleNumber;
-    private String title;
-    private String writer;
-    private String id;
-    private String content;
-    private String writeDate;
-    private String imgName;
+    private String userName;
+    private String userNum;
+    private String deptId;
+    private String SxId;
+    private String pastContent;
+    private String dtContent;
 
-    public Article (int articleNumber, String title, String writer,
-                    String id, String content, String writeDate, String imgName){
-        this.articleNumber = articleNumber;
-        this.title = title;
-        this.writer = writer;
-        this.id = id;
-        this.content = content;
-        this.writeDate = writeDate;
-        this.imgName = imgName;
+    public Article (String userName, String userNum,
+                    String deptId, String SxId, String pastContent, String dtContent){
+        this.userName = userName;
+        this.userNum = userNum;
+        this.deptId = deptId;
+        this.SxId = SxId;
+        this.pastContent = pastContent;
+        this.dtContent = dtContent;
     }
 
-    public int getArticleNumber() {
-        return articleNumber;
+
+
+
+    public String getUserName() {
+        return userName;
     }
 
-    public String getTitle() {
-        return title;
+    public String getUserNum() {
+        return userNum;
     }
 
-    public String getWriter() {
-        return writer;
+    public String getDeptId() {
+        return deptId;
     }
 
-    public String getId() {
-        return id;
+    public String getSxId() {
+        return SxId;
     }
 
-    public String getContent() {
-        return content;
+    public String getPastContent() {
+        return pastContent;
     }
 
-    public String getWriteDate() {
-        return writeDate;
-    }
-
-    public String getImgName() {
-        return imgName;
+    public String getDtContent() {
+        return dtContent;
     }
 }

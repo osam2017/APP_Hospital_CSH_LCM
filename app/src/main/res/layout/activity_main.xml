@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.hospitalproject.MainActivity">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -17,22 +17,18 @@
         >
 
         <ImageButton
-            android:id="@+id/main_imgbtn"
+            android:id="@+id/btnAdmin"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
             android:adjustViewBounds="true"
             android:background="@android:color/holo_blue_light"
             android:scaleType="fitStart"
             app:srcCompat="@drawable/nobg" />
 
-        <Button
-            android:id="@+id/btnMaster"
-            android:layout_width="140dp"
-            android:layout_height="36dp"
-            android:background="#ffffffff"
-            android:text="Master" />
-    </FrameLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

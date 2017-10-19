@@ -7,38 +7,42 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import static com.loopj.android.http.AsyncHttpClient.log;
 
-public class Doctor_Choose_hospitalActivity extends AppCompatActivity implements OnClickListener, AdapterView.OnItemClickListener{
+public class Admin_list extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
+    ArrayList<Article> list;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_choose_hospital);
+        setContentView(R.layout.activity_admin_list);
 
-        ListView listView = (ListView)findViewById(R.id.hospital_list_user);
-        ArrayList<String> arrayList1 = new ArrayList<String>();
+        ListView listView = (ListView)findViewById(R.id.Doctor_list);
 
-        arrayList1.add("국군강릉병원");
-        arrayList1.add("국군고양병원");
-        arrayList1.add("국군구리병원");
-        arrayList1.add("국군대구병원");
-        arrayList1.add("국군대전병원");
-        arrayList1.add("국군수도병원");
-        arrayList1.add("국군양주병원");
-        arrayList1.add("국군일동병원");
-        arrayList1.add("국군청평병원");
-        arrayList1.add("국군춘천병원");
-        arrayList1.add("국군함평병원");
-        arrayList1.add("국군홍천병원");
-        log.i("Doctor_chose","arrayList add below");
+        try {
+
+            ArrayList<String> arrayList1 = new ArrayList<String>();
+            Dao dao = new Dao(getApplicationContext());
+
+            list = dao.getArticleList();
+            log.i("getUserName", "asdasd : " + list.size());
+            for (int i = 0; list.size() < i; i++) {
+                arrayList1.add(list.get(i).getUserName());
+            }
+        }catch(Exception e){
+            log.i("Admin_list_DaoError",e.getMessage());
+            Toast.makeText(this, "등록된 환자가 없습니다.", Toast.LENGTH_LONG).show();
+            Intent intentMain = new Intent(this, MainActivity.class);
+            startActivity(intentMain);
+        }
+
 
         ArrayAdapter<String> hospital_list_user_Adapter1;
-        log.i("Doctor_chose","adapter1");
 
         hospital_list_user_Adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList1);
         listView.setAdapter(hospital_list_user_Adapter1);
