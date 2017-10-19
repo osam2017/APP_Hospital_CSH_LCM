@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         ImageButton main_emergency = (ImageButton) findViewById(R.id.main_emergency);
         main_emergency.setOnClickListener(this);
         ImageButton main_doctor = (ImageButton) findViewById(R.id.main_doctor);
-        main_doctor.setOnClickListener(this);
+        main _doctor.setOnClickListener(this);
         btnAdmin.setOnLongClickListener(this);
     }
 

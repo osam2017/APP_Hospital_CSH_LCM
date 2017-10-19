@@ -181,7 +181,7 @@ public class QuestionActivity extends AppCompatActivity implements OnClickListen
                     deptString = listStringSum(deptStateArray);
                     log.i("QuestionActivity_onClick_deptSringSum", "Success");
                     SxString = listStringSum(SxStateArray);
-                    log.i("QuestionActivity_onClick_SxSringSum", "Success");
+                    log.i("QuestionActivity_onCl ick_SxSringSum", "Success");
 
                     Dao dao = new Dao(getApplicationContext());
                     log.i("userasd", "userName" + userName);
