@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.hospitalproject.questionnaire"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/activity_article_view_textView_time"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:gravity="center"
+                android:text="문 진 표"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="172dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="병원명"
+                android:textColor="#000000" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.71">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01">
+
+                    <EditText
+                        android:id="@+id/editText6"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.01"
+                        android:ems="10"
+                        android:hint="본인 과거/가족 병력"
+                        android:inputType="textMultiLine"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="112dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="이름"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="189dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="군번(-생략)"
+                        android:inputType="number" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="52dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="0.36"
+                        android:text="Button" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="진 료 과"
+                    android:textColor="#000000" />
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn1"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="내과"
+                        android:textOn="내과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn2"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="비뇨기과"
+                        android:textOn="비뇨기과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="산부인과"
+                        android:textOn="산부인과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn4"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="신경외과"
+                        android:textOn="신경외과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn5"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="신체검사의학과"
+                        android:textOn="신체검사의학과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn6"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="안과"
+                        android:textOn="안과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn7"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="3"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="약제과"
+                        android:textOn="약제과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn8"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="3"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="영상의학과"
+                        android:textOn="영상의학과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn9"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="3"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="이비인후과"
+                        android:textOn="이비인후과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn10"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="4"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="일반외과"
+                        android:textOn="일반외과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn11"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="4"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="정신건강의학과"
+                        android:textOn="정신건강의학과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn12"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="4"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="정형외과"
+                        android:textOn="정형외과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn13"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="5"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="진단검사의학과"
+                        android:textOn="진단검사의학과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn14"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="5"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="치과"
+                        android:textOn="치과" />
+
+                    <ToggleButton
+                        android:id="@+id/deptBtn15"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="5"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="피부과"
+                        android:textOn="피부과" />
+
+
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="증   상"
+                    android:textColor="#000000" />
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn1"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="기타"
+                        android:textOn="기타" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn2"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="관절"
+                        android:textOn="관절" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn3"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="당뇨"
+                        android:textOn="당뇨" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn4"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="3"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="대상포진"
+                        android:textOn="대상포진" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn5"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="4"
+                        android:layout_row="0"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="알레르기"
+                        android:textOn="알레르기" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn6"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="척추"
+                        android:textOn="척추" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn7"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="탈모"
+                        android:textOn="탈모" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn8"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="3"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="하지정맥"
+                        android:textOn="하지정맥" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn9"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="항문"
+                        android:textOn="항문" />
+
+                    <ToggleButton
+                        android:id="@+id/SxBtn10"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="4"
+                        android:layout_row="1"
+                        android:background="@drawable/button_bg_stroke"
+                        android:textOff="화상"
+                        android:textOn="화상" />
+
+
+
+
+                </GridLayout>
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="355dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="세부증상"
+                    android:inputType="textMultiLine" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
